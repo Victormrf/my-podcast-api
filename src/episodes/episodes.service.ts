@@ -7,13 +7,13 @@ import { CreateEpisodeDto } from './dto/create-episode.dto';
 export class EpisodesService {
   private episodes: Episode[] = [];
 
-  async findAll(sort: 'asc' | 'desc' = 'asc') {
+  async findAll(sort: 'asc' | 'desc' = 'asc', limit) {
     const sortAsc = (a: Episode, b: Episode) => (a.name > b.name ? 1 : -1);
     const sortDesc = (a: Episode, b: Episode) => (a.name < b.name ? 1 : -1);
 
     return sort === 'asc'
-      ? this.episodes.sort(sortAsc)
-      : this.episodes.sort(sortDesc);
+      ? this.episodes.sort(sortAsc).slice(0, limit)
+      : this.episodes.sort(sortDesc).slice(0, limit);
   }
 
   async findFeatured() {
