@@ -5,3 +5,7 @@ Content-Type: application/json
     "username": "Pablo Vegetti",
     "password": "123abc"
 }
+
+###
+GET http://localhost:3000/auth/me
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiUGFibG8gVmVnZXR0aSIsImlhdCI6MTc0MDU1MTgxMSwiZXhwIjoxNzQwNjM4MjExfQ.cbQj29hPm7Kjl5WUeAL18yYcU5tiA0clyvmpKuw67Q0
