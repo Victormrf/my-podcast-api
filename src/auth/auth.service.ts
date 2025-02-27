@@ -32,7 +32,7 @@ export class AuthService {
       throw new UnauthorizedException();
     }
 
-    return this.sigIn(user);
+    return this.signIn(user);
   }
 
   async validateUser(input: AuthInput): Promise<SignInData | null> {
@@ -45,7 +45,7 @@ export class AuthService {
     return null;
   }
 
-  async sigIn(user: SignInData): Promise<AuthResult> {
+  async signIn(user: SignInData): Promise<AuthResult> {
     const tokenPayload = {
       sub: user.userId, // convention for subject
       username: user.username,
